@@ -27,6 +27,11 @@
             return inputFilePath;
         }
 
+        public static string ParseFile(string file)
+        {
+            return File.ReadAllText(file);
+        }
+
         public static List<List<T>> ParseLists_ByColumn_FromFile<T>(string file)
         {
             // Read the entire file content
