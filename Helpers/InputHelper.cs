@@ -27,16 +27,16 @@
             return inputFilePath;
         }
 
-        public static List<List<T>> ParseListByColumn_FromFile<T>(string file)
+        public static List<List<T>> ParseLists_ByColumn_FromFile<T>(string file)
         {
             // Read the entire file content
             string fileContent = File.ReadAllText(file);
 
             // Pass the content to the FromString function
-            return ParseListByColumn_FromString<T>(fileContent);
+            return ParseLists_ByColumn_FromString<T>(fileContent);
         }
 
-        public static List<List<T>> ParseListByColumn_FromString<T>(string inputString)
+        public static List<List<T>> ParseLists_ByColumn_FromString<T>(string inputString)
         {
 
             // Split the string into lines
@@ -67,6 +67,45 @@
             }
 
             return result;
+        }
+
+        public static List<List<T>> ParseLists_ByRow_FromString<T>(string inputString)
+        {
+            // Split the string into lines
+            string[] lines = inputString.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+            //init the lists
+            List<List<T>> result = new List<List<T>>();
+
+            // Iterate over each line
+            foreach (string line in lines)
+            {
+                // Split the line into parts by whitespace
+                string[] parts = line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+
+                //init the list for this row
+                List<T> row = new List<T>();
+
+                //add each part to the row
+                foreach (string part in parts)
+                {
+                    row.Add((T)Convert.ChangeType(part, typeof(T)));
+                }
+
+                //add the row to the result
+                result.Add(row);
+            }
+
+            return result;
+        }
+
+        public static List<List<T>> ParseLists_ByRow_FromFile<T>(string file)
+        {
+            // Read the entire file content
+            string fileContent = File.ReadAllText(file);
+
+            // Pass the content to the FromString function
+            return ParseLists_ByRow_FromString<T>(fileContent);
         }
 
     }

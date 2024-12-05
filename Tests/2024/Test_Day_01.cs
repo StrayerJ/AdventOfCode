@@ -1,14 +1,14 @@
 ﻿using AdventOfCode.Year2024;
 using Helpers;
 
-namespace AoC_Tests.Year2024
+namespace Year2024
 {
     internal class Test_Day_01
     {
         [Test]
         public void Sample_Part_1()
         {
-            var lists = InputHelper.ParseListByColumn_FromString<int>(
+            var lists = InputHelper.ParseLists_ByColumn_FromString<int>(
                 @"3   4
                 4   3
                 2   5
@@ -24,7 +24,7 @@ namespace AoC_Tests.Year2024
         [Test]
         public void Sample_Part_2()
         {
-            var lists = InputHelper.ParseListByColumn_FromString<int>(
+            var lists = InputHelper.ParseLists_ByColumn_FromString<int>(
                 @"3   4
                 4   3
                 2   5

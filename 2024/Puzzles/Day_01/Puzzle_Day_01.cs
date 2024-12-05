@@ -9,7 +9,7 @@ namespace AdventOfCode.Year2024
 
         public Puzzle_Day_01(string inputFilePath)
         {
-            List<List<int>> lists = InputHelper.ParseListByColumn_FromFile<int>(inputFilePath);
+            List<List<int>> lists = InputHelper.ParseLists_ByColumn_FromFile<int>(inputFilePath);
 
             InputA = lists[0];
             InputB = lists[1];
