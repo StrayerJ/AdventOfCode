@@ -113,5 +113,36 @@
             return ParseLists_ByRow_FromString<T>(fileContent);
         }
 
+        public static T[][] ParseMatrixFromFile<T>(string file)
+        {
+            // Read the entire file content
+            string fileContent = File.ReadAllText(file);
+
+            return ParseMatrixFromString<T>(fileContent);
+
+        }
+
+        public static T[][] ParseMatrixFromString<T>(string input)
+        {
+            // Split the input string into lines
+            var lines = input.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            var matrix = new T[lines.Length][];
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                // Split each line into values by whitespace
+                var values = lines[i].Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+
+                matrix[i] = new T[values.Length];
+                for (int j = 0; j < values.Length; j++)
+                {
+                    matrix[i][j] = (T)Convert.ChangeType(values[j], typeof(T));
+                }
+            }
+
+            return matrix;
+        }
+
+
     }
 }

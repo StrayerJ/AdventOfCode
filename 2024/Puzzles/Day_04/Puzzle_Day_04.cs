@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.Year2024
 {
-    public class Puzzle_Day_XX
+    public class Puzzle_Day_04
     {
-        public Puzzle_Day_XX(string filename)
+        public Puzzle_Day_04(string filename)
         {
         }
 

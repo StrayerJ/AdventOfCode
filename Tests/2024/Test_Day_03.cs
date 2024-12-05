@@ -25,6 +25,10 @@ namespace Year2024
         [Test]
         public void Solution()
         {
+            string inputFile = InputHelper.GetInputFilePath("2024", "D3P1.txt");
+            Puzzle_Day_03 puzzle = new(inputFile, true);
+            Assert.That(puzzle.Solve_Part01(), Is.EqualTo(178886550));
+            Assert.That(puzzle.Solve_Part02(), Is.EqualTo(87163705));
         }
     }
 }
