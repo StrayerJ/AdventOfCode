@@ -47,6 +47,16 @@ namespace AdventOfCode.Year2024
             Puzzle_Day_05 D5P2_Puzzle = new(InputHelper.GetInputFilePath("2024", "D5P1.txt"));
             Console.WriteLine(D5P2_Puzzle.Solve_Part02());
 
+            //--------------------------DAY 06 - Part 01---------------------------------
+            Console.WriteLine("AoC - Day 06 - Part 01");
+            Puzzle_Day_06 D6P1_Puzzle = new(InputHelper.GetInputFilePath("2024", "D6P1.txt"));
+            Console.WriteLine(D6P1_Puzzle.Solve_Part01());
+
+            //--------------------------DAY 06 - Part 02---------------------------------
+            Console.WriteLine("AoC - Day 06 - Part 02");
+            Puzzle_Day_06 D6P2_Puzzle = new(InputHelper.GetInputFilePath("2024", "D6P1.txt"));
+            Console.WriteLine(D6P2_Puzzle.Solve_Part02());
+
         }
     }
 }
