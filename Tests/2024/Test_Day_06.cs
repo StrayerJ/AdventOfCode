@@ -20,13 +20,12 @@ namespace Year2024
         }
 
         [Test]
+        [Explicit("This test takes a long time to run. Only run it manually.")]
         public void Solution()
         {
             Puzzle_Day_06 puzzle = new Puzzle_Day_06("D6P1.txt");
             Assert.That(puzzle.Solve_Part01(), Is.EqualTo(4663));
-            
-            //disable too slow (brute forced solution)
-            //Assert.That(puzzle.Solve_Part02(), Is.EqualTo(1530));
+            Assert.That(puzzle.Solve_Part02(), Is.EqualTo(1530));
         }
     }
 }

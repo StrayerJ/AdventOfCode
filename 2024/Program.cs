@@ -2,6 +2,3 @@
 
 PuzzleOutputRunner puzzleRunner = new();
 puzzleRunner.Run();
-
-
-Console.ReadLine();
