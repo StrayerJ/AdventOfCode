@@ -43,7 +43,6 @@ namespace AdventOfCode.Year2024
                     Console.WriteLine(D1_Puzzle.Solve_Part02());
                     break;
                 case 2:
-
                     //--------------------------DAY 02---------------------------------
                     Puzzle_Day_02 D2_Puzzle = new(InputHelper.GetInputFilePath("2024", "D2P1.txt"));
                     Console.WriteLine("AoC - Day 02 - Part 01");
@@ -52,7 +51,6 @@ namespace AdventOfCode.Year2024
                     Console.WriteLine(D2_Puzzle.Solve_Part02());
                     break;
                 case 3:
-
                     //--------------------------DAY 03---------------------------------
                     Puzzle_Day_03 D3_Puzzle = new(InputHelper.GetInputFilePath("2024", "D3P1.txt"), true);
                     Console.WriteLine("AoC - Day 03 - Part 01");
@@ -61,9 +59,14 @@ namespace AdventOfCode.Year2024
                     Console.WriteLine(D3_Puzzle.Solve_Part02());
                     break;
                 case 4:
+                    //--------------------------DAY 04---------------------------------
+                    Puzzle_Day_04 D4_Puzzle = new(InputHelper.GetInputFilePath("2024", "D4P1.txt"));
+                    Console.WriteLine("AoC - Day 04 - Part 01");
+                    Console.WriteLine(D4_Puzzle.Solve_Part01());
+                    Console.WriteLine("AoC - Day 04 - Part 02");
+                    Console.WriteLine(D4_Puzzle.Solve_Part02());
                     break;
                 case 5:
-
                     //--------------------------DAY 05---------------------------------
                     Puzzle_Day_05 D5_Puzzle = new(InputHelper.GetInputFilePath("2024", "D5P1.txt"));
                     Console.WriteLine("AoC - Day 05 - Part 01");

@@ -202,13 +202,13 @@ namespace AdventOfCode.Year2024
             return potentialLoops;
         }
 
-    }
+        public enum Direction
+        {
+            North,
+            East,
+            South,
+            West
+        }
 
-    public enum Direction
-    {
-        North,
-        East,
-        South,
-        West
     }
 }
