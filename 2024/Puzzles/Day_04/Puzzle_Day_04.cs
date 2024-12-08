@@ -197,18 +197,5 @@ namespace AdventOfCode.Year2024
             return true;
         }
 
-
-
-        public enum Direction
-        {
-            Up,
-            Down,
-            Left,
-            Right,
-            UpLeft,
-            UpRight,
-            DownLeft,
-            DownRight
-        }
     }
 }

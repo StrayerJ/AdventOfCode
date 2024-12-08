@@ -14,10 +14,10 @@ namespace AdventOfCode.Year2024
         //list of coordinates for obstacles
         List<(int, int)> Obstacles = new List<(int, int)>();
         HashSet<(int, int)> Visited = new HashSet<(int, int)>();
-        HashSet<(int, int, Direction)> PathHistory = new HashSet<(int, int, Direction)>();
+        HashSet<(int, int, CardinalDirection)> PathHistory = new HashSet<(int, int, CardinalDirection)>();
 
         (int, int) StartingGuardPosition;
-        Direction StartingGuardDirection;
+        CardinalDirection StartingGuardDirection;
 
         public Puzzle_Day_06(string filename)
         {
@@ -72,51 +72,51 @@ namespace AdventOfCode.Year2024
             switch (val)
             {
                 case ">":
-                    StartingGuardDirection = Direction.East;
+                    StartingGuardDirection = CardinalDirection.East;
                     break;
                 case "<":
-                    StartingGuardDirection = Direction.West;
+                    StartingGuardDirection = CardinalDirection.West;
                     break;
                 case "^":
-                    StartingGuardDirection = Direction.North;
+                    StartingGuardDirection = CardinalDirection.North;
                     break;
                 case "v":
-                    StartingGuardDirection = Direction.South;
+                    StartingGuardDirection = CardinalDirection.South;
                     break;
                 default:
                     throw new Exception("Invalid guard direction");
             }
         }
 
-        private (int, int) Forward((int, int) pos, Direction dir)
+        private (int, int) Forward((int, int) pos, CardinalDirection dir)
         {
             switch (dir)
             {
-                case Direction.North:
+                case CardinalDirection.North:
                     return (pos.Item1, pos.Item2 + 1);
-                case Direction.East:
+                case CardinalDirection.East:
                     return (pos.Item1 + 1, pos.Item2);
-                case Direction.South:
+                case CardinalDirection.South:
                     return (pos.Item1, pos.Item2 - 1);
-                case Direction.West:
+                case CardinalDirection.West:
                     return (pos.Item1 - 1, pos.Item2);
                 default:
                     throw new Exception("Invalid guard direction");
             }
         }
 
-        private Direction TurnRight(Direction dir)
+        private CardinalDirection TurnRight(CardinalDirection dir)
         {
             switch (dir)
             {
-                case Direction.North:
-                    return Direction.East;
-                case Direction.East:
-                    return Direction.South;
-                case Direction.South:
-                    return Direction.West;
-                case Direction.West:
-                    return Direction.North;
+                case CardinalDirection.North:
+                    return CardinalDirection.East;
+                case CardinalDirection.East:
+                    return CardinalDirection.South;
+                case CardinalDirection.South:
+                    return CardinalDirection.West;
+                case CardinalDirection.West:
+                    return CardinalDirection.North;
                 default:
                     throw new Exception("Invalid guard direction");
             }
@@ -126,7 +126,7 @@ namespace AdventOfCode.Year2024
         {
             bool hasExited = false;
             (int, int) currPos = StartingGuardPosition;
-            Direction currDir = StartingGuardDirection;
+            CardinalDirection currDir = StartingGuardDirection;
 
             // Ensure the starting position is marked as visited
             Visited.Add(currPos);
@@ -200,14 +200,6 @@ namespace AdventOfCode.Year2024
             }
 
             return potentialLoops;
-        }
-
-        public enum Direction
-        {
-            North,
-            East,
-            South,
-            West
         }
 
     }
