@@ -107,6 +107,14 @@ namespace AdventOfCode.Year2024
                     Console.WriteLine("AoC - Day 09 - Part 02");
                     Console.WriteLine(D9_Puzzle.Solve_Part02());
                     break;
+                case 10:
+                    //--------------------------DAY 10---------------------------------
+                    Puzzle_Day_10 D10_Puzzle = new(InputHelper.GetInputFilePath("2024", "D10P1.txt"));
+                    Console.WriteLine("AoC - Day 10 - Part 01");
+                    Console.WriteLine(D10_Puzzle.Solve_Part01());
+                    Console.WriteLine("AoC - Day 10 - Part 02");
+                    Console.WriteLine(D10_Puzzle.Solve_Part02());
+                    break;
                 default:
                     Console.WriteLine("Day not implemented yet");
                     break;

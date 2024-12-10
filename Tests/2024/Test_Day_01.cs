@@ -8,7 +8,7 @@ namespace Year2024
         [Test]
         public void Sample_Part_1()
         {
-            var lists = InputHelper.ParseLists_ByColumn_FromString<int>(
+            var lists = ContainerHelper.ParseLists_ByColumn_FromString<int>(
                 @"3   4
                 4   3
                 2   5
@@ -24,7 +24,7 @@ namespace Year2024
         [Test]
         public void Sample_Part_2()
         {
-            var lists = InputHelper.ParseLists_ByColumn_FromString<int>(
+            var lists = ContainerHelper.ParseLists_ByColumn_FromString<int>(
                 @"3   4
                 4   3
                 2   5

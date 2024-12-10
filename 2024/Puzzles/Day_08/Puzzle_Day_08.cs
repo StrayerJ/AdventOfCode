@@ -23,7 +23,7 @@ namespace AdventOfCode.Year2024
             string fpath = InputHelper.GetInputFilePath("2024", filename);
             string raw = InputHelper.ParseFile(fpath);
             char[][] baseMatrix = ContainerHelper.ParseMatrixFromString<char>(raw, "");
-            AntennaMap = ContainerHelper.NormalizeToXYMap(baseMatrix);
+            AntennaMap = ContainerHelper.NormalizeToXY(baseMatrix);
             FindAntennas();
             GetAntennaPairs();
         }

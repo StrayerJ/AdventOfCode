@@ -23,7 +23,7 @@ namespace AdventOfCode.Year2024
         {
             string fpath = InputHelper.GetInputFilePath("2024", filename);
             string[][] tMap = InputHelper.ParseMatrixFromFile<string>(fpath, "");
-            Map = ContainerHelper.NormalizeToXYMap<string>(tMap);
+            Map = ContainerHelper.NormalizeToXY<string>(tMap);
 
             InitializeMap();
         }

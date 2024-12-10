@@ -15,7 +15,7 @@ namespace AdventOfCode.Year2024
         {
             string input = InputHelper.ParseFile(InputHelper.GetInputFilePath("2024",filename));
             char[][] matrix = ContainerHelper.ParseMatrixFromString<char>(input, "");
-            WordSearch = ContainerHelper.NormalizeToXYMap<char>(matrix);
+            WordSearch = ContainerHelper.NormalizeToXY<char>(matrix);
         }
 
         public int Solve_Part01()

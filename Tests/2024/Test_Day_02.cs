@@ -21,7 +21,7 @@ namespace Year2024
         [Test]
         public void Sample_Part_1()
         {
-            var lists = InputHelper.ParseLists_ByRow_FromString<int>(sampleInput);
+            var lists = ContainerHelper.ParseLists_ByRow_FromString<int>(sampleInput);
             Puzzle_Day_02 puzzle = new(lists);
             Assert.That(puzzle.Solve_Part01(), Is.EqualTo(2));
         }
@@ -29,7 +29,7 @@ namespace Year2024
         [Test]
         public void Sample_Part_2()
         {
-            var lists = InputHelper.ParseLists_ByRow_FromString<int>(sampleInput);
+            var lists = ContainerHelper.ParseLists_ByRow_FromString<int>(sampleInput);
             Puzzle_Day_02 puzzle = new(lists);
             Assert.That(puzzle.Solve_Part02(), Is.EqualTo(4));
         }

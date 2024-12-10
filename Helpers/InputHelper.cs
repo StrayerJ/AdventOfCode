@@ -38,70 +38,7 @@
             string fileContent = File.ReadAllText(file);
 
             // Pass the content to the FromString function
-            return ParseLists_ByColumn_FromString<T>(fileContent);
-        }
-
-        public static List<List<T>> ParseLists_ByColumn_FromString<T>(string inputString)
-        {
-
-            // Split the string into lines
-            string[] lines = inputString.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-
-
-            int numCols = lines[0].Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries).Length;
-
-            //init the lists
-            List<List<T>> result = new List<List<T>>();
-            for (int i = 0; i < numCols; i++)
-            {
-                result.Add(new List<T>());
-            }
-
-            // Iterate over each line
-            foreach (string line in lines)
-            {
-                // Split the line into parts by whitespace
-                string[] parts = line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-
-                //add each part to its respective list
-                for (int i = 0; i < numCols; i++)
-                {
-                    result[i].Add((T)Convert.ChangeType(parts[i], typeof(T)));
-                }
-
-            }
-
-            return result;
-        }
-
-        public static List<List<T>> ParseLists_ByRow_FromString<T>(string inputString)
-        {
-            // Split the string into lines
-            string[] lines = inputString.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-
-            //init the lists
-            List<List<T>> result = new List<List<T>>();
-
-            // Iterate over each line
-            foreach (string line in lines)
-            {
-                // Split the line into parts by whitespace
-                string[] parts = line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-
-                //init the list for this row
-                List<T> row = new List<T>();
-
-                //add each part to the row
-                foreach (string part in parts)
-                {
-                    row.Add((T)Convert.ChangeType(part, typeof(T)));
-                }
-
-                //add the row to the result
-                result.Add(row);
-            }
-
-            return result;
+            return ContainerHelper.ParseLists_ByColumn_FromString<T>(fileContent);
         }
 
         public static List<List<T>> ParseLists_ByRow_FromFile<T>(string file)
@@ -110,7 +47,7 @@
             string fileContent = File.ReadAllText(file);
 
             // Pass the content to the FromString function
-            return ParseLists_ByRow_FromString<T>(fileContent);
+            return ContainerHelper.ParseLists_ByColumn_FromString<T>(fileContent);
         }
 
         public static T[][] ParseMatrixFromFile<T>(string file, string delimiter = " ")
@@ -122,8 +59,14 @@
 
         }
 
+        public static T[][] ParseMatrixFromFile_Normalized<T>(string file, string delimiter = " ")
+        {
+            // Read the entire file content
+            string fileContent = File.ReadAllText(file);
 
+            return ContainerHelper.NormalizeToXY( ContainerHelper.ParseMatrixFromString<T>(fileContent, delimiter) );
 
+        }
 
     }
 }
