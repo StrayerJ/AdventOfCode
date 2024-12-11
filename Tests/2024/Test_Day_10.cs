@@ -26,8 +26,8 @@ namespace Year2024
         public void Solution()
         {
             Puzzle_Day_10 puzzle = new(PuzzleFile);
-            Assert.That(puzzle.Solve_Part01(), Is.EqualTo(0));
-            Assert.That(puzzle.Solve_Part02(), Is.EqualTo(0));
+            Assert.That(puzzle.Solve_Part01(), Is.EqualTo(825));
+            Assert.That(puzzle.Solve_Part02(), Is.EqualTo(1805));
         }
     }
 }

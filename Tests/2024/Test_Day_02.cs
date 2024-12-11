@@ -39,8 +39,7 @@ namespace Year2024
         {
             // 572
             // 612
-            string inputFile = InputHelper.GetInputFilePath("2024", "D2P1.txt");
-            Puzzle_Day_02 puzzle = new(inputFile);
+            Puzzle_Day_02 puzzle = new("D2P1.txt");
             Assert.That(puzzle.Solve_Part01(), Is.EqualTo(572));
             Assert.That(puzzle.Solve_Part02(), Is.EqualTo(612));
         }

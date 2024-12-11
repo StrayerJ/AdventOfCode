@@ -32,6 +32,14 @@
             return File.ReadAllText(file);
         }
 
+        public static List<T> ParseLineFile<T>(string file, string delimiter = " ")
+        {
+            // Read the entire file content
+            string fileContent = File.ReadAllText(file);
+
+            return ContainerHelper.ParseLine<T>(fileContent, delimiter);
+        }
+
         public static List<List<T>> ParseLists_ByColumn_FromFile<T>(string file)
         {
             // Read the entire file content
@@ -47,7 +55,7 @@
             string fileContent = File.ReadAllText(file);
 
             // Pass the content to the FromString function
-            return ContainerHelper.ParseLists_ByColumn_FromString<T>(fileContent);
+            return ContainerHelper.ParseLists_ByRow_FromString<T>(fileContent);
         }
 
         public static T[][] ParseMatrixFromFile<T>(string file, string delimiter = " ")

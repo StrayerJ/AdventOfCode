@@ -9,6 +9,19 @@ namespace Helpers
     public static class ContainerHelper
     {
 
+        public static List<T> ParseLine<T>(string input, string delimieter )
+        {
+            string[] parts = input.Split(new[] { delimieter }, StringSplitOptions.RemoveEmptyEntries);
+            List<T> result = new List<T>();
+
+            foreach (string part in parts)
+            {
+                result.Add((T)Convert.ChangeType(part, typeof(T)));
+            }
+
+            return result;
+            
+        }
         public static List<List<T>> ParseLists_ByColumn_FromString<T>(string inputString)
         {
 

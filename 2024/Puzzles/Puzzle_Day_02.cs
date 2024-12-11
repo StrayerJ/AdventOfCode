@@ -8,7 +8,7 @@ namespace AdventOfCode.Year2024
 
         public Puzzle_Day_02(string filename)
         {
-            InputData = InputHelper.ParseLists_ByRow_FromFile<int>(filename);
+            InputData = InputHelper.ParseLists_ByRow_FromFile<int>(InputHelper.GetInputFilePath("2024", filename));
         }
 
         public Puzzle_Day_02(List<List<int>> data)
